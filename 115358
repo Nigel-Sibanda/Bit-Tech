@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Risk Form</title>
+	<style>
+		/* Center the form */
+		.form-container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+		}
+
+		/* Style the form */
+		.form {
+			width: 50%;
+			max-width: 500px;
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		}
+
+		/* Style the submit and close buttons */
+		.form button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 5px;
+		}
+
+		/* Style the close button */
+		.form button.close {
+			background-color: #f44336;
+		}
+	</style>
+</head>
+<body>
+	<!-- Add button -->
+	<button onclick="openForm()">New Risk</button>
+
+	<!-- Form container -->
+	<div id="form-container" class="form-container">
+		<!-- Form -->
+		<form id="add-item-form" class="form" style="display: none;">
+			<!-- Name input with placeholder -->
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" placeholder="Enter name..." required>
+
+  <br>
+			<!-- Description input with placeholder -->
+			<label for="description">Description:</label>
+			<textarea id="description" name="description" placeholder="Enter description..." required></textarea>
+			
+			<br>
+
+			<!-- Status input with radio buttons -->
+			<label>Status:</label><br>
+			<input type="radio" id="open" name="status" value="Open" checked>
+			<label for="open">Open</label><br>
+			<input type="radio" id="closed" name="status" value="Closed">
+			<label for="closed">Closed</label><br>
+
+			<!-- Likelihood input with placeholder -->
+			<label for="likelihood">Likelihood:</label>
+			<input type="number" id="likelihood" name="likelihood" placeholder="Enter likelihood..." required>
+
+			<!-- Submit and close buttons -->
+			<div>
+				<button type="submit">Submit</button>
+				<button type="button" class="close" onclick="closeForm()">Close</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+		// Function to open the form
+		function openForm() {
+			document.getElementById("add-item-form").style.display = "block";
+			document.getElementById("form-container").style.display = "flex";
+		}
+
+		// Function to close the form
+		function closeForm() {
+			document.getElementById("add-item-form").style.display = "none";
+			document.getElementById("form-container").style.display = "none";
+		}
+	</script>
+</body>
+</html>
