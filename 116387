@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bit Tech Admin Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      form {
+        border: 2px solid #ddd;
+        background-color: #fff;
+        padding: 20px;
+        width: 300px;
+        margin: 0 auto;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bit Tech Admin Login</h1>
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <br>
+      <input type="submit" value="Login" onclick="login()">
+    </form>
+    <script>
+  function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if (username === "admin" && password === "123") {
+      window.location.href = "./main.html";
+    } else {
+      alert("Incorrect username or password. Please try again.");
+    }
+  }
+
+    </script>
+    
+    <div>
+        <h2> Username: admin</h2>
+        <h2> Password: 123</h2>
+  </body>
+</html>
